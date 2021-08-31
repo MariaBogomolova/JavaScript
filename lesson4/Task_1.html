@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function convertToObj(number) {
+        let unitsUnit = number % 10;
+        number = Math.floor(number / 10);
+        let decimalUnit = number % 10;
+        let hundredsUnit = Math.floor(number / 10);
+        return {
+            unitsUnit,
+            decimalUnit,
+            hundredsUnit
+        };
+    }
+    const number = parseInt(prompt('Введите число от 0 до 999: '));
+    if (0 <= number && number <= 999) {
+        console.log(convertToObj(number));}
+    else {
+        console.log('Число за пределами диапазона.');
+        console.log(convertToObj(0));
+    }
+</script>
+</body>
+</html>
